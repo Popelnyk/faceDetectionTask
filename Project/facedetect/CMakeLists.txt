@@ -19,7 +19,12 @@ set(CMAKE_BUILD_TYPE RELEASE)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-find_package(OpenCV REQUIRED PATHS "${CMAKE_CURRENT_SOURCE_DIR}/opencv/")
+if(WIN32)
+    find_package(OpenCV REQUIRED PATHS "${CMAKE_CURRENT_SOURCE_DIR}/opencv/build/")
+else()
+    find_package(OpenCV REQUIRED PATHS "${CMAKE_CURRENT_SOURCE_DIR}/opencv/")
+endif()
+
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 add_library(facedetect SHARED "${CMAKE_CURRENT_SOURCE_DIR}/src/facedetect.cpp")
