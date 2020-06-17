@@ -35,7 +35,7 @@ then run
   
 to run project go to Project directory, then in cmd type 
 
-sudo ./app "<PathToDirectoryWithPhotos>" 
+sudo ./app "PathToDirectoryWithPhotos" 
 
 # installation in Windows
 
@@ -43,7 +43,7 @@ the same with boost and opencv , you need to build them and paste boost to Proje
 
 then cd Project/facedetect 
 
-  cmake -G "Visual Studio <version> <year>" .  (example "Visual Studio 16 2019")
+  cmake -G "Visual Studio version year" .  (example "Visual Studio 16 2019")
   
   cmake --build . --target ALL_BUILD --config Release
   
