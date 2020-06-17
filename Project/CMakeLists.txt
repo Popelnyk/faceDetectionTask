@@ -13,6 +13,7 @@ if (CMAKE_COMPILER_IS_GNUCXX)
  set(CMAKE_CXX_FLAGS_RELEASE ${CMAKE_C_FLAGS_RELEASE})
 endif ()
 
+set(BOOST_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/boost_1_72_0/")
 set(Boost_USE_STATIC_LIBS OFF) 
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF) 
@@ -21,7 +22,12 @@ find_package(facedetect REQUIRED PATHS "${CMAKE_CURRENT_SOURCE_DIR}/facedetect/"
 			 REQUIRED COMPONENTS facedetect)
 find_package(Boost REQUIRED COMPONENTS filesystem )
 
-link_directories("${CMAKE_CURRENT_SOURCE_DIR}/facedetect/lib/")
+if(WIN32)
+    link_directories("${CMAKE_CURRENT_SOURCE_DIR}/facedetect/Release/")
+else()
+    link_directories("${CMAKE_CURRENT_SOURCE_DIR}/facedetect/lib/")
+endif()
+
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/facedetect/include/")
 include_directories( ${BOOST_INCLUDE_DIRS} )
 			 
