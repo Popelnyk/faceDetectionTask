@@ -6,7 +6,7 @@ boost_1_72_0
 
 i used opencv/dnn for face detecting with files for configuring my dnn -- deploy.prototxt.txt and res10_300x300_ssd_iter_140000.caffemodel
 
-# Installation on Linux:
+# Installation in Linux:
 
 paste opencv and opencv_contrib to the Project/facedetect directory 
 
@@ -37,7 +37,7 @@ to run project go to Project directory, then in cmd type
 
 sudo ./app <PathToDirectoryWithPhotos> 
 
-# installation on Windows
+# installation in Windows
 
 the same with boost and opencv , you need to build them and paste boost to Project directory and opencv to Project/facedetect directory 
 
