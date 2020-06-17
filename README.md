@@ -35,7 +35,7 @@ then run
   
 to run project go to Project directory, then in cmd type 
 
-sudo ./app <PathToDirectoryWithPhotos> 
+sudo ./app "<PathToDirectoryWithPhotos>" 
 
 # installation in Windows
 
